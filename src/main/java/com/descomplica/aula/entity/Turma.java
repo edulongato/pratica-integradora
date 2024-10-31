@@ -1,24 +1,24 @@
 package com.descomplica.aula.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
-@Setter
-@Getter
+
+@Data
 @Entity
 public class Turma {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idTurma;
+    private Long idTurma;
 
-    private Date horario;
+    private LocalTime horario;
     private int duracao;
-    private Date dataInicio;
-    private Date dataFim;
+    private LocalDate dataInicio;
+    private LocalDate dataFim;
 
     @ManyToOne
     @JoinColumn(name = "instrutor_id")
