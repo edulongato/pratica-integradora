@@ -21,7 +21,7 @@ public class Turma {
     private LocalDate dataFim;
 
     @ManyToOne
-    @JoinColumn(name = "instrutor_id")
+    @JoinColumn(name = "idInstrutor")
     private Instrutor instrutor;
 
 }
