@@ -9,15 +9,24 @@ import java.time.LocalTime;
 
 @Data
 @Entity
+@Table(name = "turma")
 public class Turma {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTurma;
+    @Column(name = "id_turma")
+    private Integer idTurma;
 
+    @Column(name = "horario")
     private LocalTime horario;
-    private int duracao;
+
+    @Column(name = "duracao")
+    private int duracaoTurma;
+
+    @Column(name = "data_inicio")
     private LocalDate dataInicio;
+
+    @Column(name = "data_fim")
     private LocalDate dataFim;
 
     @ManyToOne
